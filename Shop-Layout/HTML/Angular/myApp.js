@@ -7,7 +7,7 @@ var list = [
     },
     {
         imageURL:'images/shop/DSC04355.jpg',
-        rating:3,
+        rating:3.5,
         price:399,
         description:'Mirrors Hi-Tech City'
     },
@@ -76,6 +76,22 @@ app.controller('itemsController', function($scope){
     $scope.itemsList = list;
 
     $scope.parallaxItems = parallaxList;
+
+    $scope.getArray = function(value){
+        var tempArray = [];
+        while(value>0){
+            if(value==0.5){
+                tempArray.push(value);
+            }else{
+                tempArray.push(1);
+            }
+            value = value - 1;
+        }
+        while(tempArray.length<5){
+            tempArray.push(0);
+        }
+        return tempArray;
+    }
 
 });
 

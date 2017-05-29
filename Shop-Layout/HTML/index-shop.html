@@ -164,8 +164,9 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/download.jpg" align="left" width="200px" height="75px" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+						<!--<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/download.jpg" align="left" width="200px" height="75px" alt="Canvas Logo"></a>-->
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img style="height:40px" src="images/dealsinhyd.png" alt="Canvas Logo"></a>
+						<!--<a class="retina-logo"><img src="images/dealsinhyd.png" /></a>-->
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -604,11 +605,16 @@
                                             <span class="fa-icon-rupee"></span>
 											<div class="product-rating">
                                                 <link href="css/font-icons.css" rel="stylesheet" />
+												<span  ng-repeat="value in getArray(item.rating) track by $index">
+													<i class="icon-star3" ng-if="value==1" ></i>
+													<i class="icon-star-half-full" ng-if="value==0.5"></i>
+													<i class="icon-star-empty" ng-if="value==0"></i>
+												</span>
+												<!--<i class="icon-star3"></i>
 												<i class="icon-star3"></i>
 												<i class="icon-star3"></i>
 												<i class="icon-star3"></i>
-												<i class="icon-star3"></i>
-												<i class="icon-star-half-full"></i>
+												<i class="icon-star-half-full"></i>-->
 											</div>
 										</div>
 									</div>
