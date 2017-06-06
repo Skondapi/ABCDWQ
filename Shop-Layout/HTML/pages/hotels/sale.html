@@ -16,29 +16,32 @@
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="Angular/saloon.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="angular/sale.js"></script>
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
-
+	<![endif] -->
 	<!-- Document Title
 	============================================= -->
 	<title>Shop - Filter | Canvas</title>
-
+	<style>
+		.product-image {
+			width: 270px;
+			height: 179px;
+		}
+		
+	</style>
 </head>
 
-<body class="stretched" ng-app="saloonApp" ng-controller="saloonController">
+<body class="stretched" ng-app="shopApp" ng-controller="shopController">
 
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
 
 		<!-- Header
-		============================================= -->
-		<!-- Page Title
 		============================================= -->
 		<header id="header">
 
@@ -135,7 +138,7 @@
 							</li>
 							<!-- Mega Menu
 							============================================= -->
-							<li class="mega-menu">
+							<li >
 								<a href="/pages/hotels/hotels.html">
 									<div>Food</div><span>Out of the Box</span></a>
 								<!--<div class="mega-menu-content style-2 clearfix">
@@ -194,7 +197,7 @@
 								</div>-->
 							</li>
 							<!-- .mega-menu end -->
-							<li>
+							<li >
 								<a href="/pages/hotels/ThingsToDo.html">
 									<div>Things To Do</div><span>Out of the Box</span></a>
 								<!--<div class="mega-menu-content style-2 clearfix">
@@ -227,15 +230,15 @@
 								</div>-->
 							</li>
 							<!-- .mega-menu end -->
-							<li >
+							<li>
 								<a href="/pages/hotels/shop.html">
 									<div>Shop</div><span>Awesome Works</span></a>
 							</li>
-							<li class="current">
-								<a href="#">
+							<li>
+								<a href="/pages/hotels/saloonspa.html">
 									<div>Saloon/Spa</div><span>Awesome Works</span></a>
 							</li>
-							<li>
+							<li class="current">
 								<a href="/pages/hotels/sale.html">
 									<div>Sale</div><span>Awesome Works</span></a>
 							</li>
@@ -264,15 +267,26 @@
 
 			</div>
 
+
 		</header>
 		<!-- #header end -->
 
+		<!-- Page Title
+		============================================= -->
 		<section id="page-title">
 
 			<div class="container clearfix">
-				<h1>Saloon/Spa</h1>
-				<span>Products with Filter Functionality</span>
-
+				<h1>Sale</h1>
+				<span>Hurry up!</span>
+				<!--
+					
+					REVISIT
+					
+					<ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Filters</a></li>
+					<li class="active">Shop Filter</li>
+				</ol>-->
 			</div>
 
 		</section>
@@ -294,7 +308,11 @@
 						============================================= -->
 						<div id="shop" class="shop product-3 grid-container clearfix">
 
-							<div class="product sf-dress clearfix" ng-repeat="item in shopItems">
+
+
+
+
+							<div class="product {{item['filter-class']}} clearfix" ng-repeat="item in shopItems" style="text-transform:capitalize;" >
 								<div class="product-image">
 									<a href="#"><img src="{{item.imageURL}}" alt="Checked Short Dress"></a>
 									<!--<a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>-->
@@ -322,7 +340,6 @@
 								</div>
 							</div>
 
-
 						</div>
 						<!-- #shop end -->
 
@@ -333,7 +350,6 @@
 					============================================= -->
 					<div class="sidebar nobottommargin">
 						<div class="sidebar-widgets-wrap">
-
 
 							<div class="widget widget-filter-links clearfix">
 
@@ -359,134 +375,132 @@
 
 
 
-
-							<div class="widget widget-filter-links clearfix">
+							<div class="widget widget-filter-links clearfix ">
 
 								<h4>Select Category</h4>
-								<ul class="custom-filter" data-container="#shop" data-active-class="active-filter">
-									<li class="widget-filter-reset active-filter"><a href="#" data-filter="*">Clear</a></li>
-									<li><a href="#" data-filter=".sf-dress">Dress</a></li>
-									<li><a href="#" data-filter=".sf-tshirt">Tshirts</a></li>
-									<li><a href="#" data-filter=".sf-pant">Pants</a></li>
-									<li><a href="#" data-filter=".sf-sunglass">Sunglasses</a></li>
-									<li><a href="#" data-filter=".sf-shoes">Shoes</a></li>
-									<li><a href="#" data-filter=".sf-watch">Watches</a></li>
+								<ul class="custom-filter " data-container="#shop " data-active-class="active-filter ">
+									<li class="widget-filter-reset active-filter "><a href="# " data-filter="* ">Clear</a></li>
+									<li ng-repeat="category in categoryList"><a href="# " data-filter="{{'.'+category.filterClass}}">{{category.name}}</a></li>
+									<!--<li><a href="# " data-filter=".sf-dress ">Dress</a></li>
+									<li><a href="# " data-filter=".sf-tshirt ">Tshirts</a></li>
+									<li><a href="# " data-filter=".sf-pant ">Pants</a></li>
+									<li><a href="# " data-filter=".sf-sunglass ">Sunglasses</a></li>
+									<li><a href="# " data-filter=".sf-shoes ">Shoes</a></li>
+									<li><a href="# " data-filter=".sf-watch ">Watches</a></li>-->
 								</ul>
 
 							</div>
 
-							<div class="widget widget-filter-links clearfix">
+							<div class="widget widget-filter-links clearfix ">
 
 								<h4>Sort By</h4>
-								<ul class="shop-sorting">
-									<li class="widget-filter-reset active-filter"><a href="#" data-sort-by="original-order">Clear</a></li>
-									<li><a href="#" data-sort-by="name">Name</a></li>
-									<li><a href="#" data-sort-by="price_lh">Price: Low to High</a></li>
-									<li><a href="#" data-sort-by="price_hl">Price: High to Low</a></li>
+								<ul class="shop-sorting ">
+									<li class="widget-filter-reset active-filter "><a href="# " data-sort-by="original-order ">Clear</a></li>
+									<li><a href="# " data-sort-by="name ">Name</a></li>
+									<li><a href="# " data-sort-by="price_lh ">Price: Low to High</a></li>
+									<li><a href="# " data-sort-by="price_hl ">Price: High to Low</a></li>
 								</ul>
 
 							</div>
 
 						</div>
-					</div>
-					<!-- .sidebar end -->
+					</div><!-- .sidebar end -->
 
 				</div>
 
 			</div>
 
-		</section>
-		<!-- #content end -->
+		</section><!-- #content end -->
 
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+		<footer id="footer " class="dark ">
 
-			<!--<div class="container">-->
+			<!--<div class="container ">-->
 
-			<!-- Footer Widgets
+				<!-- Footer Widgets
 				============================================= -->
-			<!--<div class="footer-widgets-wrap clearfix">
+				<!--<div class="footer-widgets-wrap clearfix ">
 
-					<div class="col_two_third">
+					<div class="col_two_third ">
 
-						<div class="col_one_third">
+						<div class="col_one_third ">
 
-							<div class="widget clearfix">
+							<div class="widget clearfix ">
 
-								<img src="images/footer-widget-logo.png" alt="" class="footer-logo">
+								<img src="images/footer-widget-logo.png " alt=" " class="footer-logo ">
 
 								<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+								<div style="background: url( 'images/world-map.png') no-repeat center center; background-size: 100%; ">
 									<address>
 										<strong>Headquarters:</strong><br>
 										795 Folsom Ave, Suite 600<br>
 										San Francisco, CA 94107<br>
 									</address>
-									<abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-									<abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+									<abbr title="Phone Number "><strong>Phone:</strong></abbr> (91) 8547 632521<br>
+									<abbr title="Fax "><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
+									<abbr title="Email Address "><strong>Email:</strong></abbr> info@canvas.com
 								</div>
 
 							</div>
 
 						</div>
 
-						<div class="col_one_third">
+						<div class="col_one_third ">
 
-							<div class="widget widget_links clearfix">
+							<div class="widget widget_links clearfix ">
 
 								<h4>Blogroll</h4>
 
 								<ul>
-									<li><a href="http://codex.wordpress.org/">Documentation</a></li>
-									<li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-									<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-									<li><a href="http://wordpress.org/support/">Support Forums</a></li>
-									<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-									<li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
-									<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+									<li><a href="http://codex.wordpress.org/ ">Documentation</a></li>
+									<li><a href="http://wordpress.org/support/forum/requests-and-feedback ">Feedback</a></li>
+									<li><a href="http://wordpress.org/extend/plugins/ ">Plugins</a></li>
+									<li><a href="http://wordpress.org/support/ ">Support Forums</a></li>
+									<li><a href="http://wordpress.org/extend/themes/ ">Themes</a></li>
+									<li><a href="http://wordpress.org/news/ ">WordPress Blog</a></li>
+									<li><a href="http://planet.wordpress.org/ ">WordPress Planet</a></li>
 								</ul>
 
 							</div>
 
 						</div>
 
-						<div class="col_one_third col_last">
+						<div class="col_one_third col_last ">
 
-							<div class="widget clearfix">
+							<div class="widget clearfix ">
 								<h4>Recent Posts</h4>
 
-								<div id="post-list-footer">
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+								<div id="post-list-footer ">
+									<div class="spost clearfix ">
+										<div class="entry-c ">
+											<div class="entry-title ">
+												<h4><a href="# ">Lorem ipsum dolor sit amet, consectetur</a></h4>
 											</div>
-											<ul class="entry-meta">
+											<ul class="entry-meta ">
 												<li>10th July 2014</li>
 											</ul>
 										</div>
 									</div>
 
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+									<div class="spost clearfix ">
+										<div class="entry-c ">
+											<div class="entry-title ">
+												<h4><a href="# ">Elit Assumenda vel amet dolorum quasi</a></h4>
 											</div>
-											<ul class="entry-meta">
+											<ul class="entry-meta ">
 												<li>10th July 2014</li>
 											</ul>
 										</div>
 									</div>
 
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+									<div class="spost clearfix ">
+										<div class="entry-c ">
+											<div class="entry-title ">
+												<h4><a href="# ">Debitis nihil placeat, illum est nisi</a></h4>
 											</div>
-											<ul class="entry-meta">
+											<ul class="entry-meta ">
 												<li>10th July 2014</li>
 											</ul>
 										</div>
@@ -498,57 +512,60 @@
 
 					</div>
 
-					<div class="col_one_third col_last">
+					<div class="col_one_third col_last ">
 
-						<div class="widget clearfix" style="margin-bottom: -20px;">
+						<div class="widget clearfix " style="margin-bottom: -20px; ">
 
-							<div class="row">
+							<div class="row ">
 
-								<div class="col-md-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Total Downloads</h5>
+								<div class="col-md-6 bottommargin-sm ">
+									<div class="counter counter-small "><span data-from="50 " data-to="15065421 " data-refresh-interval="80
+								 " data-speed="3000 " data-comma="true "></span></div>
+									<h5 class="nobottommargin ">Total Downloads</h5>
 								</div>
 
-								<div class="col-md-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Clients</h5>
+								<div class="col-md-6 bottommargin-sm ">
+									<div class="counter counter-small "><span data-from="100 " data-to="18465 " data-refresh-interval="50
+								 " data-speed="2000 " data-comma="true "></span></div>
+									<h5 class="nobottommargin ">Clients</h5>
 								</div>
 
 							</div>
 
 						</div>
 
-						<div class="widget subscribe-widget clearfix">
+						<div class="widget subscribe-widget clearfix ">
 							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-							<div class="widget-subscribe-form-result"></div>
-							<form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-								<div class="input-group divcenter">
-									<span class="input-group-addon"><i class="icon-email2"></i></span>
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
+							<div class="widget-subscribe-form-result "></div>
+							<form id="widget-subscribe-form " action="include/subscribe.php " role="form " method="post " class="nobottommargin ">
+								<div class="input-group divcenter ">
+									<span class="input-group-addon "><i class="icon-email2 "></i></span>
+									<input type="email " id="widget-subscribe-form-email " name="widget-subscribe-form-email " class="form-control
+								 required email " placeholder="Enter your Email ">
+									<span class="input-group-btn ">
+										<button class="btn btn-success " type="submit ">Subscribe</button>
 									</span>
 								</div>
 							</form>
 						</div>
 
-						<div class="widget clearfix" style="margin-bottom: -20px;">
+						<div class="widget clearfix " style="margin-bottom: -20px; ">
 
-							<div class="row">
+							<div class="row ">
 
-								<div class="col-md-6 clearfix bottommargin-sm">
-									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-										<i class="icon-facebook"></i>
-										<i class="icon-facebook"></i>
+								<div class="col-md-6 clearfix bottommargin-sm ">
+									<a href="# " class="social-icon si-dark si-colored si-facebook nobottommargin " style="margin-right: 10px; ">
+										<i class="icon-facebook "></i>
+										<i class="icon-facebook "></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+									<a href="# "><small style="display: block; margin-top: 3px; "><strong>Like us</strong><br>on Facebook</small></a>
 								</div>
-								<div class="col-md-6 clearfix">
-									<a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
-										<i class="icon-rss"></i>
-										<i class="icon-rss"></i>
+								<div class="col-md-6 clearfix ">
+									<a href="# " class="social-icon si-dark si-colored si-rss nobottommargin " style="margin-right: 10px; ">
+										<i class="icon-rss "></i>
+										<i class="icon-rss "></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+									<a href="# "><small style="display: block; margin-top: 3px; "><strong>Subscribe</strong><br>to RSS Feeds</small></a>
 								</div>
 
 							</div>
@@ -558,92 +575,90 @@
 					</div>
 
 				</div>-->
-			<!-- .footer-widgets-wrap end -->
-			<!--
+				<!-- .footer-widgets-wrap end -->
+<!--
 			</div>-->
 
 			<!-- Copyrights
 			============================================= -->
-			<div id="copyrights">
+			<div id="copyrights ">
 
-				<div class="container clearfix">
+				<div class="container clearfix ">
 
-					<div class="col_half">
+					<div class="col_half ">
 						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+						<div class="copyright-links "><a href="# ">Terms of Use</a> / <a href="# ">Privacy Policy</a></div>
 					</div>
 
-					<div class="col_half col_last tright">
-						<div class="fright clearfix">
-							<a href="#" class="social-icon si-small si-borderless si-facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
+					<div class="col_half col_last tright ">
+						<div class="fright clearfix ">
+							<a href="# " class="social-icon si-small si-borderless si-facebook ">
+								<i class="icon-facebook "></i>
+								<i class="icon-facebook "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
+							<a href="# " class="social-icon si-small si-borderless si-twitter ">
+								<i class="icon-twitter "></i>
+								<i class="icon-twitter "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-gplus">
-								<i class="icon-gplus"></i>
-								<i class="icon-gplus"></i>
+							<a href="# " class="social-icon si-small si-borderless si-gplus ">
+								<i class="icon-gplus "></i>
+								<i class="icon-gplus "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-pinterest">
-								<i class="icon-pinterest"></i>
-								<i class="icon-pinterest"></i>
+							<a href="# " class="social-icon si-small si-borderless si-pinterest ">
+								<i class="icon-pinterest "></i>
+								<i class="icon-pinterest "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-vimeo">
-								<i class="icon-vimeo"></i>
-								<i class="icon-vimeo"></i>
+							<a href="# " class="social-icon si-small si-borderless si-vimeo ">
+								<i class="icon-vimeo "></i>
+								<i class="icon-vimeo "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-github">
-								<i class="icon-github"></i>
-								<i class="icon-github"></i>
+							<a href="# " class="social-icon si-small si-borderless si-github ">
+								<i class="icon-github "></i>
+								<i class="icon-github "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-yahoo">
-								<i class="icon-yahoo"></i>
-								<i class="icon-yahoo"></i>
+							<a href="# " class="social-icon si-small si-borderless si-yahoo ">
+								<i class="icon-yahoo "></i>
+								<i class="icon-yahoo "></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-linkedin">
-								<i class="icon-linkedin"></i>
-								<i class="icon-linkedin"></i>
+							<a href="# " class="social-icon si-small si-borderless si-linkedin ">
+								<i class="icon-linkedin "></i>
+								<i class="icon-linkedin "></i>
 							</a>
 						</div>
 
-						<div class="clear"></div>
+						<div class="clear "></div>
 
-						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i>						+91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+						<i class="icon-envelope2 "></i> info@canvas.com <span class="middot ">&middot;</span> <i class="icon-headphones
+								 "></i> +91-11-6541-6369 <span class="middot ">&middot;</span> <i class="icon-skype2 "></i> CanvasOnSkype
 					</div>
 
 				</div>
 
-			</div>
-			<!-- #copyrights end -->
+			</div><!-- #copyrights end -->
 
-		</footer>
-		<!-- #footer end -->
+		</footer><!-- #footer end -->
 
-	</div>
-	<!-- #wrapper end -->
+	</div><!-- #wrapper end -->
 
 	<!-- Go To Top
 	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+	<div id="gotoTop " class="icon-angle-up "></div>
 
 	<!-- External JavaScripts
 	============================================= -->
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript " src="js/jquery.js "></script>
+	<script type="text/javascript " src="js/plugins.js "></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript " src="js/functions.js "></script>
 
 	<script>
 		jQuery(document).ready(function ($) {
@@ -658,7 +673,7 @@
 							var price = $(itemElem).find('.product-price').text();
 						}
 
-						priceNum = price.split("$");
+						priceNum = price.split("$ ");
 
 						return parseFloat(priceNum[1]);
 					},
@@ -669,7 +684,7 @@
 							var price = $(itemElem).find('.product-price').text();
 						}
 
-						priceNum = price.split("$");
+						priceNum = price.split("$ ");
 
 						return parseFloat(priceNum[1]);
 					}
@@ -703,5 +718,4 @@
 	</script>
 
 </body>
-
 </html>

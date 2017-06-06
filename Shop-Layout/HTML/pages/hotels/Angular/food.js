@@ -1,4 +1,4 @@
-angular.module('saloonApp', []).controller('saloonController', function ($scope) {
+angular.module('shopApp', []).controller('shopController', function ($scope) {
 
     var locationList = [
         {
@@ -54,100 +54,164 @@ angular.module('saloonApp', []).controller('saloonController', function ($scope)
 
     $scope.shopItems = [
         {
-            'imageURL':'images/saloon/Aakara.jpg',
+            'imageURL':'images/hotels/1.1.jpg',
+            'filter-class':'jubileehills bars',
+            'title':'Dominos',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/2.2.jpg',
+            'filter-class':'banjarahills gachibowli bars',
+            'title':'Khan Saab ',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/3.3.jpg',
+            'filter-class':'banjarahills bars',
+            'title':'Sahib Sindh Sultan',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/4.4.1.jpg',
+            'filter-class':'madhapur bars',
+            'title':"Ohri's Nautanki Gali",
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/5.5.jpg',
+            'filter-class':'sf-dress bars',
+            'title':'Four Seasons',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/6.6.1.jpg',
             'filter-class':'jubileehills',
-            'title':'Aakara',
+            'title':'Testa Rossa',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/bubbles1.jpg',
-            'filter-class':'banjarahills gachibowli',
-            'title':'Bubbles',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/envi.jpg',
-            'filter-class':'banjarahills',
-            'title':'Envi',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/jawedhabib.jpg',
-            'filter-class':'madhapur',
-            'title':"Jawed Habib",
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/Juice.jpg',
-            'filter-class':'sf-dress',
-            'title':'Juice',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/Lakme.jpg',
+            'imageURL':'images/hotels/6.6.jpg',
             'filter-class':'jubileehills',
-            'title':'Lakme',
+            'title':'Vivaha Bhojanambu',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/Lucas.jpg',
-            'filter-class':'jubileehills',
-            'title':'Lucas',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/manea.jpg',
+            'imageURL':'images/hotels/7.7.jpg',
             'filter-class':'lakdikapul',
-            'title':"Mane'a",
+            'title':'Kamat',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/Manjushahs.jpg',
+            'imageURL':'images/hotels/8.8.jpg',
             'filter-class':'abids',
-            'title':"Manju Shah's",
+            'title':'Palace heights',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/Naturals.jpg',
+            'imageURL':'images/hotels/9.9.jpg',
             'filter-class':'jubileehills',
-            'title':'Naturals',
+            'title':'36 Chhattees',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/Page3.jpg',
+            'imageURL':'images/hotels/10.10.jpg',
             'filter-class':'sf-dress',
-            'title':'Page3',
+            'title':'Minerva coffee shop',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/saloon/Parisdesalon.jpg',
+            'imageURL':'images/hotels/11.11.1.jpg',
             'filter-class':'madhapur',
-            'title':'Paris De Salon',
+            'title':'Maharaja chat house',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/11.11.jpg',
+            'filter-class':'abids bars',
+            'title':'Gokul chat',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/12.12.1.jpg',
+            'filter-class':'madhapur banjarahills',
+            'title':'Little italy',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/12.12.jpg',
+            'filter-class':'banjarahills bars',
+            'title':'Exotica',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },{
+            'imageURL':'images/hotels/13.13.1.jpg',
+            'filter-class':'banjarahills',
+            'title':"A'La Liberty",
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/13.13.jpg',
+            'filter-class':'banjarahills',
+            'title':'Mozzarella',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        }
+    ];
+
+
+
+    $scope.categoryList = [
+        {
+            name:'Cafes & Treats',
+            filterClass:'cafestreats'
+        },
+        {
+            name:'Bars',
+            filterClass:'bars'
+        },
+        {
+            name:'Lunch',
+            filterClass:'lunch'
+        },
+        {
+            name:'Dinner',
+            filterClass:'dinner'
+        },
+        {
+            name:'Breakfast Buffet',
+            filterClass:'breakfastbuffet'
         }
     ]
 

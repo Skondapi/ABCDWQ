@@ -1,3 +1,4 @@
+
 angular.module('shopApp', []).controller('shopController', function ($scope) {
 
     var locationList = [
@@ -54,141 +55,133 @@ angular.module('shopApp', []).controller('shopController', function ($scope) {
 
     $scope.shopItems = [
         {
-            'imageURL':'images/hotels/1.1.jpg',
+            'imageURL':'/images/thingstodo/aqua.jpg',
+            'filter-class':'jubileehills bars',
+            'title':'Aqua',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'/images/thingstodo/cocktailslounge.jpg',
+            'filter-class':'banjarahills gachibowli bars',
+            'title':'Cocktails Lounge',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'/images/thingstodo/deccantrails.jpg',
+            'filter-class':'banjarahills bars',
+            'title':'Deccan Trails',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'/images/thingstodo/hrc.jpg',
+            'filter-class':'madhapur bars',
+            'title':"HRC",
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'/images/thingstodo/images.jpg',
+            'filter-class':'sf-dress bars',
+            'title':'Carpedium',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'/images/thingstodo/jalavihar.jpg',
             'filter-class':'jubileehills',
-            'title':'Dominos',
+            'title':'Jala Vihar',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/2.2.jpg',
-            'filter-class':'banjarahills gachibowli',
-            'title':'Khan Saab',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/3.3.jpg',
-            'filter-class':'banjarahills',
-            'title':'Sahib Sindh Sultan',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/4.4.1.jpg',
-            'filter-class':'madhapur',
-            'title':"Ohri's Nautanki Gali",
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/5.5.jpg',
-            'filter-class':'sf-dress',
-            'title':'Four Seasons',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/6.6.1.jpg',
+            'imageURL':'/images/thingstodo/necklaceroad.jpg',
             'filter-class':'jubileehills',
-            'title':'Testa Rossa',
+            'title':'Necklace Road',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/6.6.jpg',
-            'filter-class':'jubileehills',
-            'title':'Vivaha Bhojanambu',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/7.7.jpg',
+            'imageURL':'/images/thingstodo/reagtton.jpg',
             'filter-class':'lakdikapul',
-            'title':'Kamat',
+            'title':'Reagtton',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/8.8.jpg',
+            'imageURL':'/images/thingstodo/rfc.jpg',
             'filter-class':'abids',
-            'title':'Palace heights',
+            'title':'Ramoji Film City',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/9.9.jpg',
+            'imageURL':'/images/thingstodo/rfc2.jpg',
             'filter-class':'jubileehills',
-            'title':'36 Chhattees',
+            'title':'Ramoji Film City',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/10.10.jpg',
+            'imageURL':'/images/thingstodo/rockclimbing.jpg',
             'filter-class':'sf-dress',
-            'title':'Minerva coffee shop',
+            'title':'Rock Climbing',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         },
         {
-            'imageURL':'images/hotels/11.11.1.jpg',
+            'imageURL':'/images/thingstodo/wonderla.jpg',
             'filter-class':'madhapur',
-            'title':'Maharaja chat house',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/11.11.jpg',
-            'filter-class':'abids',
-            'title':'Gokul chat',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/12.12.1.jpg',
-            'filter-class':'madhapur banjarahills',
-            'title':'Little italy',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/12.12.jpg',
-            'filter-class':'banjarahills',
-            'title':'Exotica',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },{
-            'imageURL':'images/hotels/13.13.1.jpg',
-            'filter-class':'banjarahills',
-            'title':"A'La Liberty",
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/hotels/13.13.jpg',
-            'filter-class':'banjarahills',
-            'title':'Mozzarella',
+            'title':'Wonder La',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
         }
-    ]
+        
+    ];
+
+
+
+    
+ $scope.categoryList = [
+        {
+            name:'Fun & Leisure',
+            filterClass:'funleisure'
+        },
+        {
+            name:'Kids Activities',
+            filterClass:'kidsactivities'
+        },
+        {
+            name:'Sports & Outdoors',
+            filterClass:'sportoutdoors'
+        },
+        {
+            name:'Sightseeing & Tours',
+            filterClass:'sightseeingtours'
+        },
+        {
+            name:'Tickets and Events',
+            filterClass:'ticketsevents'
+        },
+        {
+            name:'Night Life',
+            filterClass:'nightlife'
+        }
+    ];
 
 
 }).filter('locationFilter', function(){

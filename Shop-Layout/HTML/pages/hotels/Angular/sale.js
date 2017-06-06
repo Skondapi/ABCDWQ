@@ -1,4 +1,5 @@
-angular.module('saloonApp', []).controller('saloonController', function ($scope) {
+
+angular.module('shopApp', []).controller('shopController', function ($scope) {
 
     var locationList = [
         {
@@ -54,62 +55,13 @@ angular.module('saloonApp', []).controller('saloonController', function ($scope)
 
     $scope.shopItems = [
         {
-            'imageURL':'images/saloon/Aakara.jpg',
-            'filter-class':'jubileehills',
-            'title':'Aakara',
+            'imageURL':'images/hotels/1.1.jpg',
+            'filter-class':'jubileehills bars',
+            'title':'Dominos',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/bubbles1.jpg',
-            'filter-class':'banjarahills gachibowli',
-            'title':'Bubbles',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/envi.jpg',
-            'filter-class':'banjarahills',
-            'title':'Envi',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/jawedhabib.jpg',
-            'filter-class':'madhapur',
-            'title':"Jawed Habib",
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/Juice.jpg',
-            'filter-class':'sf-dress',
-            'title':'Juice',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/Lakme.jpg',
-            'filter-class':'jubileehills',
-            'title':'Lakme',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
-            'imageURL':'images/saloon/Lucas.jpg',
-            'filter-class':'jubileehills',
-            'title':'Lucas',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
-        },
-        {
+        },{
             'imageURL':'images/saloon/manea.jpg',
             'filter-class':'lakdikapul',
             'title':"Mane'a",
@@ -126,8 +78,23 @@ angular.module('saloonApp', []).controller('saloonController', function ($scope)
             'rating':3.5
         },
         {
+            'imageURL':'images/hotels/2.2.jpg',
+            'filter-class':'banjarahills gachibowli bars',
+            'title':'Khan Saab ',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },
+        {
+            'imageURL':'images/hotels/3.3.jpg',
+            'filter-class':'banjarahills bars',
+            'title':'Sahib Sindh Sultan',
+            'costPrice':'1999',
+            'sellingPrice':'1299',
+            'rating':3.5
+        },{
             'imageURL':'images/saloon/Naturals.jpg',
-            'filter-class':'jubileehills',
+            'filter-class':'jubileehills saloon',
             'title':'Naturals',
             'costPrice':'1999',
             'sellingPrice':'1299',
@@ -135,20 +102,31 @@ angular.module('saloonApp', []).controller('saloonController', function ($scope)
         },
         {
             'imageURL':'images/saloon/Page3.jpg',
-            'filter-class':'sf-dress',
+            'filter-class':'saloon',
             'title':'Page3',
             'costPrice':'1999',
             'sellingPrice':'1299',
             'rating':3.5
+        }
+    ];
+
+
+
+    
+ $scope.categoryList = [
+        {
+            name:'Food',
+            filterClass:'food'
         },
         {
-            'imageURL':'images/saloon/Parisdesalon.jpg',
-            'filter-class':'madhapur',
-            'title':'Paris De Salon',
-            'costPrice':'1999',
-            'sellingPrice':'1299',
-            'rating':3.5
+            name:'Saloon',
+            filterClass:'saloon'
+        },
+        {
+            name:'Spa',
+            filterClass:'spa'
         }
+       
     ]
 
 
